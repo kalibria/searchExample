@@ -1,5 +1,6 @@
 import './App.css'
-import {SearchInput} from "./ui/SearchInput/SearchInput/SearchInput.tsx";
+import {SearchInput} from "./shared/ui/SearchInput/SearchInput/SearchInput.tsx";
+
 
 function App() {
     return (
