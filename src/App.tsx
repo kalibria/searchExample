@@ -13,7 +13,7 @@ function App() {
             <SearchInput setCharacters={setCharacters}/>
             <div className={s.cardsContainer}>
                 {characters.map(character => (
-                    <Card title={character.name} status={character.status} dataCreated={character.created}
+                    <Card title={character.name} status={character.status} dateCreated={character.created}
                           url={character.url} key={character.id} className={s.card}/>))
                 }
             </div>
