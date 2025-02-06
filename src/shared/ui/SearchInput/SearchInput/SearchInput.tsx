@@ -1,12 +1,16 @@
 import s from './searchInput.module.css'
-import {ChangeEvent, useState} from "react";
+import {ChangeEvent, Dispatch, useState} from "react";
 import {debounce} from "../../../utils/debounce.ts";
 import {getCharacters} from "../../../api/sendRequests.ts";
-import {CharacterResponse} from "../../../types/types.ts";
+import {Character, CharacterResponse} from "../../../types/types.ts";
 
 const LIMIT_NUMBER = 3;
 
-export const SearchInput = () => {
+type Props = {
+    setCharacters: Dispatch<React.SetStateAction<Character[]>>
+}
+
+export const SearchInput = ({setCharacters}:Props) => {
     const [symbol, setSymbol] = useState('')
     const [countCharacters, setCountCharacters] = useState<null | number>(null)
     const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -17,10 +21,9 @@ export const SearchInput = () => {
 
     const debounceSendRequest = debounce((query: string) => {
         if (query.length > LIMIT_NUMBER) {
-            console.log("count symbol", symbol)
             getCharacters(query).then((data: CharacterResponse) => {
-                console.log("RequestData", data)
                 setCountCharacters(data.info.count)
+                setCharacters(data.results)
             })
         }
     }, 500)
