@@ -8,6 +8,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 
     margin: 100px auto
 }
@@ -17,7 +18,7 @@
     font-size: 30px;
     font-weight: 400;
     line-height: 30px;
-    color:rgba(40, 38, 38, 1);
+    color: rgba(40, 38, 38, 1);
 }
 
 .info {
@@ -31,3 +32,9 @@
     color: rgba(118, 118, 118, 1);
 
 }
+
+.image {
+    max-width: 300px;
+    width: 100%;
+}
+

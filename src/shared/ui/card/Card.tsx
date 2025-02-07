@@ -18,7 +18,6 @@ export const Card = ({title, status, dateCreated, className, id}:Props) => {
     const date = mappingDates(dateCreated)
     return (
         <div className={`${s.card} ${className}`} >
-            {/*<a href={url} className={s.title}>{title}</a>*/}
             <Link to={`/character/${id}`} className={s.title}>{title}</Link>
             <div className={s.info}>
                 <p>Status: <span style={{color: status === 'Alive' ? 'green' : 'red'}}>{status}</span></p>
