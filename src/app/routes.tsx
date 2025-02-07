@@ -1,11 +1,11 @@
 import { RouteObject } from "react-router-dom";
 import { createBrowserRouter } from "react-router-dom";
-import {CharacterPage} from "../shared/ui/character/CharacterPage.tsx";
+import {CharacterPage} from "../shared/ui/characterPage/CharacterPage.tsx";
 
 
 const routes: RouteObject[] = [
     {
-        path: "character/id",
+        path: "characterPage/id",
         element: <CharacterPage />,
     },
 ];
