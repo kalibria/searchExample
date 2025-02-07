@@ -1,4 +1,4 @@
-import './App.module.css'
+
 import {SearchInput} from "./shared/ui/SearchInput/SearchInput/SearchInput.tsx";
 import {useState} from "react";
 import {Character} from "./shared/types/types.ts";
@@ -14,7 +14,7 @@ function App() {
             <div className={s.cardsContainer}>
                 {characters.map(character => (
                     <Card title={character.name} status={character.status} dateCreated={character.created}
-                          url={character.url} key={character.id} className={s.card}/>))
+                          url={character.url} key={character.id} className={s.card} id={character.id}/>))
                 }
             </div>
         </>

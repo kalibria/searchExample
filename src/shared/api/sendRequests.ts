@@ -9,3 +9,12 @@ export const getCharacters = async (name: string) => {
     }
 
 }
+
+export const getCharacter = async (id: number) => {
+   try{
+       const response = await fetch(`${BASE_URL}/character/${id}`)
+       return await response.json()
+   } catch (error){
+       console.log('Error', error)
+   }
+}
