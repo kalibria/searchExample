@@ -6,7 +6,6 @@ import s from './characterPage.module.css'
 
 
 export function CharacterPage() {
-    console.log('CharacterPage')
     const {id} = useParams();
     const [character, setCharacter] = useState<Character | null>(null);
     const [error, setError] = useState<null | string>(null)
@@ -14,21 +13,20 @@ export function CharacterPage() {
     useEffect(() => {
         if (id) {
             getCharacter(Number(id)).then(({data, error}: ResultOrError<Character>) => {
-                if(error){
+                if (error) {
                     setCharacter(null)
                     setError(error.message)
-                }else {
+                } else {
                     setCharacter(data)
                     setError(null)
                 }
-
             });
         }
     }, [id]);
 
     if (!character && !error) {
         return <div className={s.card}>Loading...</div>;
-    }else if(error){
+    } else if (error) {
         return <div className={s.error}>"Oops! Something went wrong. Please reload the page."</div>
     }
 

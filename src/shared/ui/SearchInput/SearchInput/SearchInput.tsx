@@ -10,7 +10,7 @@ type Props = {
     setCharacters: Dispatch<React.SetStateAction<Character[]>>
 }
 
-export const SearchInput = ({setCharacters}:Props) => {
+export const SearchInput = ({setCharacters}: Props) => {
     const [symbol, setSymbol] = useState('')
     const [countCharacters, setCountCharacters] = useState<null | number>(null)
     const [error, setError] = useState<null | string>(null)
@@ -24,24 +24,19 @@ export const SearchInput = ({setCharacters}:Props) => {
         if (query.length > LIMIT_NUMBER) {
             getCharacters(query)
                 .then(({data, error}: ResultOrError<CharacterResponse>) => {
-                    if(error) {
+                    if (error) {
                         setError(error.message)
                         setCountCharacters(null);
                         setCharacters([]);
-                    }else{
+                    } else {
                         console.log('data', data)
                         setCountCharacters(data.info.count);
                         setCharacters(data.results);
                         setError(null)
-
-
                     }
-
-
                 })
                 .catch(error => {
                     console.log('error we are in catch', error)
-                    // console.error("Error fetching characters:", error.message);
                 });
         }
     }, 500);

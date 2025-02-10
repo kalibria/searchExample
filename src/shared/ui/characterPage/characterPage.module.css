@@ -3,14 +3,13 @@
     max-width: 800px;
     box-shadow: 0 7px 12px rgba(0, 0, 0, 0.1);
     padding: 20px 30px;
+    margin: 100px auto;
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-
-    margin: 100px auto
 }
 
 .title {
