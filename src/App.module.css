@@ -4,7 +4,8 @@
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
-    margin: 100px auto;
+    justify-content: center;
+    margin: 0 auto;
 }
 
 

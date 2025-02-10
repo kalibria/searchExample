@@ -2,18 +2,18 @@ import {StrictMode} from 'react'
 import {createRoot} from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
-import {BrowserRouter, Route, Routes} from "react-router";
+import {HashRouter, Route, Routes} from "react-router";
 import {CharacterPage} from "./shared/ui/characterPage/CharacterPage.tsx";
 
 
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
-        <BrowserRouter>
+        <HashRouter>
             <Routes>
                 <Route path="/" element={<App />} />
                 <Route path='/character/:id' element={<CharacterPage/>}/>
             </Routes>
-        </BrowserRouter>
+        </HashRouter>
     </StrictMode>,
 )

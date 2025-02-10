@@ -29,6 +29,10 @@ export type Info = {
 export type CharacterResponse = {
     info: Info;
     results: Character[];
-};
+}
 
-export type Status = 'Alive' | 'Dead'
+export type Status = 'Alive' | 'Dead';
+
+export type Success<T> = { data: T; error: undefined };
+export type Failure = { data: undefined; error: Error };
+export type ResultOrError<T> = Success<T> | Failure;
